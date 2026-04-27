@@ -1,0 +1,30 @@
+# macOS metadata
+.DS_Store
+._*
+.AppleDouble
+.LSOverride
+
+# Log files
+*.log
+logs/
+
+# Temporary directories used during diagnostics
+tmp/
+.tmp/
+
+# Editor swap and backup files
+*.swp
+*.swo
+*.bak
+*~
+
+# Node (defensive — not used by this skill but common contamination)
+node_modules/
+
+# Local secrets
+.env
+.env.*
+
+# Generated reports (users may write reports inside the directory)
+report.md
+*.report.md
