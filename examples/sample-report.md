@@ -102,7 +102,7 @@ endpoints, TLS certificate). It cannot:
 - Detect exploited backdoors or compromised content not exposed on the front page.
 
 For an internal audit (file integrity, cron schedule, user roles, transient state, full
-plugin inventory), use a dedicated maintenance plugin such as `npc-wp-healthcheck`.
+plugin inventory), use a dedicated WordPress maintenance plugin that runs inside the site.
 
 ## References
 

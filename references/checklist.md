@@ -180,8 +180,8 @@ backup plugins like UpdraftPlus, security plugins like SiteGuard, etc.) do not e
 outside**.
 
 Treat the count as a **lower bound**. Many WordPress sites have 2–4× more plugins
-active than this check can see. For a complete plugin inventory, use the
-`npc-wp-healthcheck` plugin (internal audit) or check the WP admin Plugins screen.
+active than this check can see. For a complete plugin inventory, use a dedicated
+WordPress maintenance plugin (internal audit) or check the WP admin Plugins screen.
 
 ### Notes
 - This list is intentionally short and high-signal. Phase 2 (with API access) can integrate with the WPScan vulnerability database for accurate version-aware checks.

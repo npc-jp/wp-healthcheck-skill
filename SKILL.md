@@ -1,6 +1,6 @@
 ---
 name: wp-healthcheck
-description: Diagnoses WordPress site health from public information only. Detects WordPress version and active theme, validates SSL/TLS certificate expiry and issuer, checks recommended security headers (X-Frame-Options, HSTS, CSP, X-Content-Type-Options, Referrer-Policy), verifies robots.txt and sitemap.xml, measures top-page response time, probes xmlrpc.php / wp-json / wp-cron.php exposure, and flags installed plugins with historical CVEs. Produces a Markdown report graded OK / WARNING / CRITICAL / UNKNOWN. Use this skill whenever the user asks to check, audit, diagnose, scan, or review a WordPress site, mentions wp-healthcheck, asks why a WordPress site is slow or insecure, requests a maintenance report, or provides a URL and asks whether it looks healthy. Works on any public WordPress site without credentials. For internal audits requiring database, file integrity, or admin state, point the user to the npc-wp-healthcheck plugin instead.
+description: Diagnoses WordPress site health from public information only. Detects WordPress version and active theme, validates SSL/TLS certificate expiry and issuer, checks recommended security headers (X-Frame-Options, HSTS, CSP, X-Content-Type-Options, Referrer-Policy), verifies robots.txt and sitemap.xml, measures top-page response time, probes xmlrpc.php / wp-json / wp-cron.php exposure, and flags installed plugins with historical CVEs. Produces a Markdown report graded OK / WARNING / CRITICAL / UNKNOWN. Use this skill whenever the user asks to check, audit, diagnose, scan, or review a WordPress site, mentions wp-healthcheck, asks why a WordPress site is slow or insecure, requests a maintenance report, or provides a URL and asks whether it looks healthy. Works on any public WordPress site without credentials. For internal audits requiring database, file integrity, or admin state, recommend a dedicated WordPress maintenance plugin instead.
 license: Complete terms in LICENSE
 ---
 
@@ -113,7 +113,7 @@ This skill examines **only publicly accessible information**. It cannot:
 - Replace a WAF, vulnerability scanner, or full security audit.
 
 For deeper checks (file diffs, scheduled cron, user roles, transient state), use a
-dedicated maintenance plugin such as `npc-wp-healthcheck`.
+dedicated WordPress maintenance plugin that runs inside the site.
 
 ## References
 

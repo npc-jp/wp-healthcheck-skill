@@ -30,7 +30,7 @@ fi
 # 末尾スラッシュを削る（正規化）
 BASE_URL="${BASE_URL%/}"
 
-CURL_OPTS_COMMON="--silent --show-error --connect-timeout 10 --max-time 30 --location --user-agent npc-wp-healthcheck-skill/0.1"
+CURL_OPTS_COMMON="--silent --show-error --connect-timeout 10 --max-time 30 --location --user-agent wp-healthcheck-skill/0.1"
 
 # 1. トップページ取得（HTML本文 + ヘッダ + 応答時間）
 curl $CURL_OPTS_COMMON \
@@ -84,7 +84,7 @@ case "$BASE_URL" in
   https://*)
     # curl -vI は標準エラーに証明書情報を出すので 2>&1 でキャプチャ
     curl -vI --connect-timeout 10 --max-time 30 \
-      --user-agent npc-wp-healthcheck-skill/0.1 \
+      --user-agent wp-healthcheck-skill/0.1 \
       "$BASE_URL/" > /dev/null 2> "$WORK_DIR/ssl.verbose" || true
     ;;
   *)
