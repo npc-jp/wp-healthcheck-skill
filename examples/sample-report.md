@@ -9,7 +9,7 @@ Re-run the same command to refresh it.
 # WordPress Healthcheck Report
 
 - Target: https://n-pc.jp
-- Generated: 2026-04-27 03:12:46 UTC
+- Generated: 2026-04-28 05:31:38 UTC
 - Skill: wp-healthcheck (Phase 1, standalone external probe)
 
 ## Summary
@@ -21,10 +21,10 @@ Re-run the same command to refresh it.
 |---|---|---|
 | WordPress version | OK | WordPress 6.9.4 appears reasonably current. |
 | Active theme | OK | Active theme: npc-abc-theme |
-| SSL / TLS certificate | OK | Certificate valid for 69 more days. |
+| SSL / TLS certificate | OK | Certificate valid for 68 more days. |
 | Security headers | CRITICAL | 0 of 5 recommended security headers present. |
 | robots.txt and sitemap | OK | Both robots.txt and sitemap are present. |
-| Top page response time | OK | Top page time_total: 0.210586s |
+| Top page response time | OK | Top page time_total: 0.166054s |
 | Public API surface | OK | xmlrpc / wp-json / wp-cron probed. |
 | Plugin fingerprints | WARNING | Plugins with historical CVEs detected: contact-form-7  |
 
@@ -44,13 +44,13 @@ Active theme: npc-abc-theme
 
 ### SSL / TLS certificate — OK
 
-Certificate valid for 69 more days.
+Certificate valid for 68 more days.
 
 - Subject: CN=www.n-pc.jp
-- Issuer: CN=ESET SSL Filter CA; O=ESET, spol. s r. o.; C=SK
+- Issuer: C=US; O=Let's Encrypt; CN=R13
 - Valid from: Apr  6 23:29:06 2026 GMT
 - Expires: Jul  5 23:29:05 2026 GMT
-- Days remaining: 69
+- Days remaining: 68
 
 ### Security headers — CRITICAL
 
@@ -69,7 +69,7 @@ Both robots.txt and sitemap are present.
 
 ### Top page response time — OK
 
-Top page time_total: 0.210586s
+Top page time_total: 0.166054s
 
 - Single-sample measurement; treat as indicative only.
 
@@ -85,7 +85,8 @@ xmlrpc / wp-json / wp-cron probed.
 
 Plugins with historical CVEs detected: contact-form-7 
 
-- All detected plugins (4): akismet cf7-google-analytics contact-form-7 google-site-kit 
+- Front-end visible plugins (4): akismet cf7-google-analytics contact-form-7 google-site-kit 
+- Note: Plugins active only in the WordPress admin (SEO, cache, backup, security tools) typically leave no front-end fingerprint and cannot be detected from outside.
 - Action: verify each flagged plugin is up to date. Versions cannot be determined externally.
 
 ## Limitations
@@ -94,11 +95,14 @@ This report is built **only from publicly accessible information** (HTML, header
 endpoints, TLS certificate). It cannot:
 
 - Determine actual installed plugin versions (only slugs visible in HTML).
+- See plugins that are active only in the WordPress admin (SEO, cache, backup, security
+  managers). Front-end-invisible plugins leave no fingerprint in public HTML, so the
+  detected plugin count is a **lower bound**, not a complete inventory.
 - Inspect database, wp-config.php, or admin-only state.
 - Detect exploited backdoors or compromised content not exposed on the front page.
 
-For an internal audit (file integrity, cron schedule, user roles, transient state), use a
-dedicated maintenance plugin such as `npc-wp-healthcheck`.
+For an internal audit (file integrity, cron schedule, user roles, transient state, full
+plugin inventory), use a dedicated maintenance plugin such as `npc-wp-healthcheck`.
 
 ## References
 
